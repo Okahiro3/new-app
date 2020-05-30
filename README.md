@@ -22,6 +22,8 @@ tweetsテーブル
 - belongs_to :user
 - has many :comments
 
+commentsテーブル
+
 |Column|Type|Options|
 |------|----|-------|
 |text|text||null :false|
