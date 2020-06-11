@@ -1,33 +1,43 @@
 # DB設計
 usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null :false|
 |password|string|null :false|
 |email|string|null :false|
-
 - has many :tweets
-- has many :comments
+- has many :groups 
 
 tweetsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |image|text|||
 |text|text|||
-|user_id|integer|null :false foreign_key :true
-
+|group|references|null :false foreign_key :true|
+|user|references|null :false foreign_key :true|
 - belongs_to :user
-- has many :comments
+- belong_to :group
 
-commentsテーブル
-
+groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text||null :false|
-|user_id|integer|null :false foreign_key :true
-|tweet_id|integer|null :false foreign_key :true
+|name|string||null :false|
+- belong_to :users
+- has_many :tweets
+- has_many :members  through:  :groups_members
 
-- belongs_to :user
-- belongs_to :tweet
+membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_name|string||null :false|
+|group|refences|null :false foreign_key :true
+- has_many :groups_members
+- has_many :groups  through:  :groups_members
+
+groups_usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group|refences|null :false foreign_key :true|
+|user|refences|null :false foreign_key :true|
+- belong_to :group
+- belong_to :member
