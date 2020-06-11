@@ -6,8 +6,7 @@ usersテーブル
 |password|string|null :false|
 |email|string|null :false|
 - has many :tweets
-- has many :groups through:  :groups_members
-
+- has many :groups 
 
 tweetsテーブル
 |Column|Type|Options|
@@ -23,9 +22,9 @@ groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string||null :false|
-- has_many :users
+- belong_to :users
 - has_many :tweets
-- has_many :groups_users
+- has_many :members  through:  :groups_members
 
 membersテーブル
 |Column|Type|Options|
@@ -41,4 +40,4 @@ groups_usersテーブル
 |group|refences|null :false foreign_key :true|
 |user|refences|null :false foreign_key :true|
 - belong_to :group
-- belong_to :user
+- belong_to :member
