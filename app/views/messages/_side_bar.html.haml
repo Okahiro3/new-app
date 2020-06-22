@@ -2,14 +2,14 @@
   .user-box
     .top-items
       %p.top-items__name
-        masa
+        = current_user.name
       %ul.top-items__box-menu
         %li.top-items__group-edit
           = link_to "###", class:"group-edit" do
             = icon('far', 'edit')
         %li.top-items__config
-          = link_to "###", class:"config" do
-            = icon('fa', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog', class: 'icon')
   .group-list
     .group
       %p.group__group-name
