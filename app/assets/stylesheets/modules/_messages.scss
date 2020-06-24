@@ -59,12 +59,16 @@
 
 .group{
   margin-bottom: 40px;
-  &__group-name{
-    margin-bottom: 5px;
+  a{
     color: white;
+    text-decoration: none;
+
+  }
+  &__name{
+    margin-bottom: 5px;
     font-size: 15px;
   }
-  &__group-message{
+  &__message{
     color: white;
     font-size: 11px;
   }
