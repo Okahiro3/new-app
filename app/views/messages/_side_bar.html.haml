@@ -5,7 +5,7 @@
         = current_user.name
       %ul.top-items__box-menu
         %li.top-items__group-edit
-          = link_to "groups/new", class:"group-edit" do
+          = link_to  new_group_path(@group) do
             = icon('far', 'edit')
         %li.top-items__config
           = link_to edit_user_path(current_user) do
