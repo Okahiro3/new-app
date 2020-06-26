@@ -136,9 +136,11 @@
     }
   }
   &__text{
-  color: #434A54;
-  font-size: 14px;
-  margin-bottom: 46px;
+    &__content{
+      color: #434A54;
+      font-size: 14px;
+      margin-bottom: 46px;
+    }
   }
 }
 .message-form{
