@@ -66,11 +66,10 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'devise'
 
 gem 'carrierwave'
-<<<<<<< Updated upstream
-gem 'mini_magick'
-=======
+
 gem 'mini_magick'
 gem 'jquery-rails'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -81,4 +80,3 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
 end
->>>>>>> Stashed changes
