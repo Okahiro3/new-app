@@ -3,17 +3,19 @@
 }
 
 .wrapper{
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .side-bar {
+  overflow: scroll;
   float: left;
   width: 300px;
-  height: 100%;
+  height: 100vh;
 }
 
 .user-box {
+  overflow: scroll;
   background-color: #253141;
   height: 100px;
   align-items: center;
@@ -52,6 +54,7 @@
   }
 }
 .group-list {
+  overflow: scroll;
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
