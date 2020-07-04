@@ -51,5 +51,5 @@ production:
   <<: *default
   database: new-app_production
   username: root
-  password: <%= ENV['Okazaki3211'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
