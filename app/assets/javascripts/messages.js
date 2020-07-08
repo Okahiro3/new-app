@@ -60,10 +60,15 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.submit-btn')
+    })
+    .always(function() {
+      $('.submit-btn').prop('disabled', false);
     });
   })
   var reloadMessages = function() {
-    var last_message_id = $('.message:list').data("message-id");
+    var last_message_id = $('.message:last').data("message-id");
+    console.log(last_message_id);
       $.ajax({
         url: "api/messages",
         type: 'get',
@@ -71,13 +76,13 @@ $(function(){
         data: {id: last_message_id}
       })
     .done(function(messages) {
-      if (meesages.length !== 0) {
-        var inserHTML = '';
+      if (messages.length !== 0) {
+        var insertHTML = '';
         $.each(messages, function(i, message) {
-          insertHTML += builderHTML(message)
+          insertHTML += buildHTML(message)
         });
-        $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.message-list').append(insertHTML);
+        $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
       }
     })
     .fail(function() {
